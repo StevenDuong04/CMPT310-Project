@@ -1,0 +1,341 @@
+University,General_GPA,General_Acceptance_Rate,Career,Program_GPA,Program_Acceptance_Rate
+University of Toronto,80,77,Software Engineer,3.8,43
+University of Toronto,80,77,Business Owner,3.7,50
+University of Toronto,80,77,Unknown,3.6,60
+University of Toronto,80,77,Banker,3.7,45
+University of Toronto,80,77,Lawyer,3.9,20
+University of Toronto,80,77,Accountant,3.7,50
+University of Toronto,80,77,Doctor,3.9,10
+University of Toronto,80,77,Real Estate Developer,3.6,55
+University of Toronto,80,77,Stock Investor,3.7,50
+University of Toronto,80,77,Construction Engineer,3.8,40
+University of Toronto,80,77,Artist,3.5,60
+University of Toronto,80,77,Game Developer,3.8,45
+University of Toronto,80,77,Government Officer,3.6,55
+University of Toronto,80,77,Teacher,3.5,60
+University of Toronto,80,77,Designer,3.5,55
+University of Toronto,80,77,Scientist,3.8,42
+University of Toronto,80,77,Writer,3.5,60
+University of British Columbia,85,54,Software Engineer,3.8,43
+University of British Columbia,85,54,Business Owner,3.7,50
+University of British Columbia,85,54,Unknown,3.6,60
+University of British Columbia,85,54,Banker,3.7,45
+University of British Columbia,85,54,Lawyer,3.9,20
+University of British Columbia,85,54,Accountant,3.7,50
+University of British Columbia,85,54,Doctor,3.9,10
+University of British Columbia,85,54,Real Estate Developer,3.6,55
+University of British Columbia,85,54,Stock Investor,3.7,50
+University of British Columbia,85,54,Construction Engineer,3.8,40
+University of British Columbia,85,54,Artist,3.5,60
+University of British Columbia,85,54,Game Developer,3.8,45
+University of British Columbia,85,54,Government Officer,3.6,55
+University of British Columbia,85,54,Teacher,3.5,60
+University of British Columbia,85,54,Designer,3.5,55
+University of British Columbia,85,54,Scientist,3.8,42
+University of British Columbia,85,54,Writer,3.5,60
+McGill University,85,48,Software Engineer,3.8,43
+McGill University,85,48,Business Owner,3.7,50
+McGill University,85,48,Unknown,3.6,60
+McGill University,85,48,Banker,3.7,45
+McGill University,85,48,Lawyer,3.9,20
+McGill University,85,48,Accountant,3.7,50
+McGill University,85,48,Doctor,3.9,10
+McGill University,85,48,Real Estate Developer,3.6,55
+McGill University,85,48,Stock Investor,3.7,50
+McGill University,85,48,Construction Engineer,3.8,40
+McGill University,85,48,Artist,3.5,60
+McGill University,85,48,Game Developer,3.8,45
+McGill University,85,48,Government Officer,3.6,55
+McGill University,85,48,Teacher,3.5,60
+McGill University,85,48,Designer,3.5,55
+McGill University,85,48,Scientist,3.8,42
+McGill University,85,48,Writer,3.5,60
+McMaster University,85,60,Software Engineer,3.8,43
+McMaster University,85,60,Business Owner,3.7,50
+McMaster University,85,60,Unknown,3.6,60
+McMaster University,85,60,Banker,3.7,45
+McMaster University,85,60,Lawyer,3.9,20
+McMaster University,85,60,Accountant,3.7,50
+McMaster University,85,60,Doctor,3.9,10
+McMaster University,85,60,Real Estate Developer,3.6,55
+McMaster University,85,60,Stock Investor,3.7,50
+McMaster University,85,60,Construction Engineer,3.8,40
+McMaster University,85,60,Artist,3.5,60
+McMaster University,85,60,Game Developer,3.8,45
+McMaster University,85,60,Government Officer,3.6,55
+McMaster University,85,60,Teacher,3.5,60
+McMaster University,85,60,Designer,3.5,55
+McMaster University,85,60,Scientist,3.8,42
+McMaster University,85,60,Writer,3.5,60
+University of Alberta,80,58,Software Engineer,3.8,43
+University of Alberta,80,58,Business Owner,3.7,50
+University of Alberta,80,58,Unknown,3.6,60
+University of Alberta,80,58,Banker,3.7,45
+University of Alberta,80,58,Lawyer,3.9,20
+University of Alberta,80,58,Accountant,3.7,50
+University of Alberta,80,58,Doctor,3.9,10
+University of Alberta,80,58,Real Estate Developer,3.6,55
+University of Alberta,80,58,Stock Investor,3.7,50
+University of Alberta,80,58,Construction Engineer,3.8,40
+University of Alberta,80,58,Artist,3.5,60
+University of Alberta,80,58,Game Developer,3.8,45
+University of Alberta,80,58,Government Officer,3.6,55
+University of Alberta,80,58,Teacher,3.5,60
+University of Alberta,80,58,Designer,3.5,55
+University of Alberta,80,58,Scientist,3.8,42
+University of Alberta,80,58,Writer,3.5,60
+Université de Montréal,80,77,Software Engineer,3.8,43
+Université de Montréal,80,77,Business Owner,3.7,50
+Université de Montréal,80,77,Unknown,3.6,60
+Université de Montréal,80,77,Banker,3.7,45
+Université de Montréal,80,77,Lawyer,3.9,20
+Université de Montréal,80,77,Accountant,3.7,50
+Université de Montréal,80,77,Doctor,3.9,10
+Université de Montréal,80,77,Real Estate Developer,3.6,55
+Université de Montréal,80,77,Stock Investor,3.7,50
+Université de Montréal,80,77,Construction Engineer,3.8,40
+Université de Montréal,80,77,Artist,3.5,60
+Université de Montréal,80,77,Game Developer,3.8,45
+Université de Montréal,80,77,Government Officer,3.6,55
+Université de Montréal,80,77,Teacher,3.5,60
+Université de Montréal,80,77,Designer,3.5,55
+Université de Montréal,80,77,Scientist,3.8,42
+Université de Montréal,80,77,Writer,3.5,60
+University of Waterloo,85,53,Software Engineer,3.8,43
+University of Waterloo,85,53,Business Owner,3.7,50
+University of Waterloo,85,53,Unknown,3.6,60
+University of Waterloo,85,53,Banker,3.7,45
+University of Waterloo,85,53,Lawyer,3.9,20
+University of Waterloo,85,53,Accountant,3.7,50
+University of Waterloo,85,53,Doctor,3.9,10
+University of Waterloo,85,53,Real Estate Developer,3.6,55
+University of Waterloo,85,53,Stock Investor,3.7,50
+University of Waterloo,85,53,Construction Engineer,3.8,40
+University of Waterloo,85,53,Artist,3.5,60
+University of Waterloo,85,53,Game Developer,3.8,45
+University of Waterloo,85,53,Government Officer,3.6,55
+University of Waterloo,85,53,Teacher,3.5,60
+University of Waterloo,85,53,Designer,3.5,55
+University of Waterloo,85,53,Scientist,3.8,42
+University of Waterloo,85,53,Writer,3.5,60
+Western University,85,58,Software Engineer,3.8,43
+Western University,85,58,Business Owner,3.7,50
+Western University,85,58,Unknown,3.6,60
+Western University,85,58,Banker,3.7,45
+Western University,85,58,Lawyer,3.9,20
+Western University,85,58,Accountant,3.7,50
+Western University,85,58,Doctor,3.9,10
+Western University,85,58,Real Estate Developer,3.6,55
+Western University,85,58,Stock Investor,3.7,50
+Western University,85,58,Construction Engineer,3.8,40
+Western University,85,58,Artist,3.5,60
+Western University,85,58,Game Developer,3.8,45
+Western University,85,58,Government Officer,3.6,55
+Western University,85,58,Teacher,3.5,60
+Western University,85,58,Designer,3.5,55
+Western University,85,58,Scientist,3.8,42
+Western University,85,58,Writer,3.5,60
+University of Calgary,80,80,Software Engineer,3.8,43
+University of Calgary,80,80,Business Owner,3.7,50
+University of Calgary,80,80,Unknown,3.6,60
+University of Calgary,80,80,Banker,3.7,45
+University of Calgary,80,80,Lawyer,3.9,20
+University of Calgary,80,80,Accountant,3.7,50
+University of Calgary,80,80,Doctor,3.9,10
+University of Calgary,80,80,Real Estate Developer,3.6,55
+University of Calgary,80,80,Stock Investor,3.7,50
+University of Calgary,80,80,Construction Engineer,3.8,40
+University of Calgary,80,80,Artist,3.5,60
+University of Calgary,80,80,Game Developer,3.8,45
+University of Calgary,80,80,Government Officer,3.6,55
+University of Calgary,80,80,Teacher,3.5,60
+University of Calgary,80,80,Designer,3.5,55
+University of Calgary,80,80,Scientist,3.8,42
+University of Calgary,80,80,Writer,3.5,60
+University of Ottawa,80,80,Software Engineer,3.8,43
+University of Ottawa,80,80,Business Owner,3.7,50
+University of Ottawa,80,80,Unknown,3.6,60
+University of Ottawa,80,80,Banker,3.7,45
+University of Ottawa,80,80,Lawyer,3.9,20
+University of Ottawa,80,80,Accountant,3.7,50
+University of Ottawa,80,80,Doctor,3.9,10
+University of Ottawa,80,80,Real Estate Developer,3.6,55
+University of Ottawa,80,80,Stock Investor,3.7,50
+University of Ottawa,80,80,Construction Engineer,3.8,40
+University of Ottawa,80,80,Artist,3.5,60
+University of Ottawa,80,80,Game Developer,3.8,45
+University of Ottawa,80,80,Government Officer,3.6,55
+University of Ottawa,80,80,Teacher,3.5,60
+University of Ottawa,80,80,Designer,3.5,55
+University of Ottawa,80,80,Scientist,3.8,42
+University of Ottawa,80,80,Writer,3.5,60
+Queen's University,85,58,Software Engineer,3.8,43
+Queen's University,85,58,Business Owner,3.7,50
+Queen's University,85,58,Unknown,3.6,60
+Queen's University,85,58,Banker,3.7,45
+Queen's University,85,58,Lawyer,3.9,20
+Queen's University,85,58,Accountant,3.7,50
+Queen's University,85,58,Doctor,3.9,10
+Queen's University,85,58,Real Estate Developer,3.6,55
+Queen's University,85,58,Stock Investor,3.7,50
+Queen's University,85,58,Construction Engineer,3.8,40
+Queen's University,85,58,Artist,3.5,60
+Queen's University,85,58,Game Developer,3.8,45
+Queen's University,85,58,Government Officer,3.6,55
+Queen's University,85,58,Teacher,3.5,60
+Queen's University,85,58,Designer,3.5,55
+Queen's University,85,58,Scientist,3.8,42
+Queen's University,85,58,Writer,3.5,60
+Dalhousie University,80,80,Software Engineer,3.8,43
+Dalhousie University,80,80,Business Owner,3.7,50
+Dalhousie University,80,80,Unknown,3.6,60
+Dalhousie University,80,80,Banker,3.7,45
+Dalhousie University,80,80,Lawyer,3.9,20
+Dalhousie University,80,80,Accountant,3.7,50
+Dalhousie University,80,80,Doctor,3.9,10
+Dalhousie University,80,80,Real Estate Developer,3.6,55
+Dalhousie University,80,80,Stock Investor,3.7,50
+Dalhousie University,80,80,Construction Engineer,3.8,40
+Dalhousie University,80,80,Artist,3.5,60
+Dalhousie University,80,80,Game Developer,3.8,45
+Dalhousie University,80,80,Government Officer,3.6,55
+Dalhousie University,80,80,Teacher,3.5,60
+Dalhousie University,80,80,Designer,3.5,55
+Dalhousie University,80,80,Scientist,3.8,42
+Dalhousie University,80,80,Writer,3.5,60
+Simon Fraser University,80,80,Software Engineer,3.8,43
+Simon Fraser University,80,80,Business Owner,3.7,50
+Simon Fraser University,80,80,Unknown,3.6,60
+Simon Fraser University,80,80,Banker,3.7,45
+Simon Fraser University,80,80,Lawyer,3.9,20
+Simon Fraser University,80,80,Accountant,3.7,50
+Simon Fraser University,80,80,Doctor,3.9,10
+Simon Fraser University,80,80,Real Estate Developer,3.6,55
+Simon Fraser University,80,80,Stock Investor,3.7,50
+Simon Fraser University,80,80,Construction Engineer,3.8,40
+Simon Fraser University,80,80,Artist,3.5,60
+Simon Fraser University,80,80,Game Developer,3.8,45
+Simon Fraser University,80,80,Government Officer,3.6,55
+Simon Fraser University,80,80,Teacher,3.5,60
+Simon Fraser University,80,80,Designer,3.5,55
+Simon Fraser University,80,80,Scientist,3.8,42
+Simon Fraser University,80,80,Writer,3.5,60
+University of Victoria,80,80,Software Engineer,3.8,43
+University of Victoria,80,80,Business Owner,3.7,50
+University of Victoria,80,80,Unknown,3.6,60
+University of Victoria,80,80,Banker,3.7,45
+University of Victoria,80,80,Lawyer,3.9,20
+University of Victoria,80,80,Accountant,3.7,50
+University of Victoria,80,80,Doctor,3.9,10
+University of Victoria,80,80,Real Estate Developer,3.6,55
+University of Victoria,80,80,Stock Investor,3.7,50
+University of Victoria,80,80,Construction Engineer,3.8,40
+University of Victoria,80,80,Artist,3.5,60
+University of Victoria,80,80,Game Developer,3.8,45
+University of Victoria,80,80,Government Officer,3.6,55
+University of Victoria,80,80,Teacher,3.5,60
+University of Victoria,80,80,Designer,3.5,55
+University of Victoria,80,80,Scientist,3.8,42
+University of Victoria,80,80,Writer,3.5,60
+University of Manitoba,80,80,Software Engineer,3.8,43
+University of Manitoba,80,80,Business Owner,3.7,50
+University of Manitoba,80,80,Unknown,3.6,60
+University of Manitoba,80,80,Banker,3.7,45
+University of Manitoba,80,80,Lawyer,3.9,20
+University of Manitoba,80,80,Accountant,3.7,50
+University of Manitoba,80,80,Doctor,3.9,10
+University of Manitoba,80,80,Real Estate Developer,3.6,55
+University of Manitoba,80,80,Stock Investor,3.7,50
+University of Manitoba,80,80,Construction Engineer,3.8,40
+University of Manitoba,80,80,Artist,3.5,60
+University of Manitoba,80,80,Game Developer,3.8,45
+University of Manitoba,80,80,Government Officer,3.6,55
+University of Manitoba,80,80,Teacher,3.5,60
+University of Manitoba,80,80,Designer,3.5,55
+University of Manitoba,80,80,Scientist,3.8,42
+University of Manitoba,80,80,Writer,3.5,60
+University of Saskatchewan,80,80,Software Engineer,3.8,43
+University of Saskatchewan,80,80,Business Owner,3.7,50
+University of Saskatchewan,80,80,Unknown,3.6,60
+University of Saskatchewan,80,80,Banker,3.7,45
+University of Saskatchewan,80,80,Lawyer,3.9,20
+University of Saskatchewan,80,80,Accountant,3.7,50
+University of Saskatchewan,80,80,Doctor,3.9,10
+University of Saskatchewan,80,80,Real Estate Developer,3.6,55
+University of Saskatchewan,80,80,Stock Investor,3.7,50
+University of Saskatchewan,80,80,Construction Engineer,3.8,40
+University of Saskatchewan,80,80,Artist,3.5,60
+University of Saskatchewan,80,80,Game Developer,3.8,45
+University of Saskatchewan,80,80,Government Officer,3.6,55
+University of Saskatchewan,80,80,Teacher,3.5,60
+University of Saskatchewan,80,80,Designer,3.5,55
+University of Saskatchewan,80,80,Scientist,3.8,42
+University of Saskatchewan,80,80,Writer,3.5,60
+Laval University,80,77,Software Engineer,3.8,43
+Laval University,80,77,Business Owner,3.7,50
+Laval University,80,77,Unknown,3.6,60
+Laval University,80,77,Banker,3.7,45
+Laval University,80,77,Lawyer,3.9,20
+Laval University,80,77,Accountant,3.7,50
+Laval University,80,77,Doctor,3.9,10
+Laval University,80,77,Real Estate Developer,3.6,55
+Laval University,80,77,Stock Investor,3.7,50
+Laval University,80,77,Construction Engineer,3.8,40
+Laval University,80,77,Artist,3.5,60
+Laval University,80,77,Game Developer,3.8,45
+Laval University,80,77,Government Officer,3.6,55
+Laval University,80,77,Teacher,3.5,60
+Laval University,80,77,Designer,3.5,55
+Laval University,80,77,Scientist,3.8,42
+Laval University,80,77,Writer,3.5,60
+York University,59,59,Software Engineer,3.8,43
+York University,59,59,Business Owner,3.7,50
+York University,59,59,Unknown,3.6,60
+York University,59,59,Banker,3.7,45
+York University,59,59,Lawyer,3.9,20
+York University,59,59,Accountant,3.7,50
+York University,59,59,Doctor,3.9,10
+York University,59,59,Real Estate Developer,3.6,55
+York University,59,59,Stock Investor,3.7,50
+York University,59,59,Construction Engineer,3.8,40
+York University,59,59,Artist,3.5,60
+York University,59,59,Game Developer,3.8,45
+York University,59,59,Government Officer,3.6,55
+York University,59,59,Teacher,3.5,60
+York University,59,59,Designer,3.5,55
+York University,59,59,Scientist,3.8,42
+York University,59,59,Writer,3.5,60
+University of Guelph,80,80,Software Engineer,3.8,43
+University of Guelph,80,80,Business Owner,3.7,50
+University of Guelph,80,80,Unknown,3.6,60
+University of Guelph,80,80,Banker,3.7,45
+University of Guelph,80,80,Lawyer,3.9,20
+University of Guelph,80,80,Accountant,3.7,50
+University of Guelph,80,80,Doctor,3.9,10
+University of Guelph,80,80,Real Estate Developer,3.6,55
+University of Guelph,80,80,Stock Investor,3.7,50
+University of Guelph,80,80,Construction Engineer,3.8,40
+University of Guelph,80,80,Artist,3.5,60
+University of Guelph,80,80,Game Developer,3.8,45
+University of Guelph,80,80,Government Officer,3.6,55
+University of Guelph,80,80,Teacher,3.5,60
+University of Guelph,80,80,Designer,3.5,55
+University of Guelph,80,80,Scientist,3.8,42
+University of Guelph,80,80,Writer,3.5,60
+Carleton University,80,80,Software Engineer,3.8,43
+Carleton University,80,80,Business Owner,3.7,50
+Carleton University,80,80,Unknown,3.6,60
+Carleton University,80,80,Banker,3.7,45
+Carleton University,80,80,Lawyer,3.9,20
+Carleton University,80,80,Accountant,3.7,50
+Carleton University,80,80,Doctor,3.9,10
+Carleton University,80,80,Real Estate Developer,3.6,55
+Carleton University,80,80,Stock Investor,3.7,50
+Carleton University,80,80,Construction Engineer,3.8,40
+Carleton University,80,80,Artist,3.5,60
+Carleton University,80,80,Game Developer,3.8,45
+Carleton University,80,80,Government Officer,3.6,55
+Carleton University,80,80,Teacher,3.5,60
+Carleton University,80,80,Designer,3.5,55
+Carleton University,80,80,Scientist,3.8,42
+Carleton University,80,80,Writer,3.5,60
