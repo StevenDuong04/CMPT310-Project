@@ -6,8 +6,6 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-import watchdog.events
-import watchdog.observers
 
 # Set the title of the app
 st.title("Career Path Prediction")

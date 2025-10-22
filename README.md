@@ -41,11 +41,6 @@ deactivate
 ```
 
 ## Running Streamlit App
-Make sure you have watchdog installed so live changes can be made when changing your code
-```bash
-pip install watchdog
-```
-
 To run a streamlit application into a browser
 ```bash
 streamlit run app_name.py

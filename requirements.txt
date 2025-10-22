@@ -7,4 +7,3 @@ tensorflow
 streamlit
 jupyter
 notebook
-watchdog
