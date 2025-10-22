@@ -85,7 +85,7 @@ print(f"Accuracy: {accuracy_score(y_test, y_pred)}")
 print(f"Precision: {precision_score(y_test, y_pred, average='weighted')}")
 print(f"Recall: {recall_score(y_test, y_pred, average='weighted')}")
 print(f"F1 Score: {f1_score(y_test, y_pred, average='weighted')}")
-
+print("\n\n")
 
 # Feature Importance (Removed 3 least important features above based on this)
 # importances = pd.Series(rf.feature_importances_, index=X.columns)
@@ -98,7 +98,7 @@ print(f"F1 Score: {f1_score(y_test, y_pred, average='weighted')}")
 # total_score, average_score, best_subject_score, worst_subject_score, study_efficiency
 
 # Change in order of above columns
-test_student = np.array([5, 10, 84, 77, 65, 65, 80, 74, 76, 521, 74.43, 84, 65, 7.443]).reshape(1, -1)
+test_student = np.array([5, 5, 88, 53, 50, 58, 84, 53, 96, 482, 68.857, 96, 50, 13.77]).reshape(1, -1)
 cols = ['absence_days','weekly_self_study_hours',
         'math_score','history_score','physics_score','chemistry_score',
         'biology_score','english_score','geography_score',
@@ -106,6 +106,13 @@ cols = ['absence_days','weekly_self_study_hours',
 
 test_student_df = pd.DataFrame(test_student, columns=cols)
 
-predicted_career = rf.predict(test_student_df)
-print(f"Predicted career aspiration: {predicted_career[0]}")
+# Top 3 predicted career aspirations
+predicted_probs = rf.predict_proba(test_student_df)
+top_3_indices = np.argsort(predicted_probs[0])[-3:][::-1]
+top_3_careers = rf.classes_[top_3_indices]
+top_3_probs = predicted_probs[0][top_3_indices]
+print("Top 3 predicted career aspirations:")
+for career, prob in zip(top_3_careers, top_3_probs):
+    print(f"{career}: {prob:.4f}")
+
 print("Done.")
