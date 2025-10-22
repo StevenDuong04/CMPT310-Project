@@ -40,7 +40,7 @@ def recommend_universities(student_gpa, student_career):
         output.append(f"{row['University']} - {row['Career']}")
     return output
 
-# Example usage
+# Example usage (General_GPA: put in a value between 0-100, Career: choose from available careers in dataset)
 top3 = recommend_universities(80, 'Software Engineer')
 print("Top 3 recommended universities and programs:")
 for i, rec in enumerate(top3, 1):
