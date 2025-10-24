@@ -1,6 +1,6 @@
 # Authors: Steven Duong, Harry Lee, Anthony Trieu, Tony Wu
 # Project: CMPT 310 Final Project - Career Path Prediction
-# Date: Oct 13, 2025
+# Date: Oct 23, 2025
 # Description: This file contains the code for the data processing and model training.
 
 # Import necessary libraries
@@ -37,7 +37,7 @@ student = student.drop(['extracurricular_activities', 'part_time_job', 'gender']
 # print(student.dtypes)
 
 # Check for unique values in career_aspiration
-# print(student['career_aspiration'].value_counts())
+print(student['career_aspiration'].value_counts())
 
 
 # Engineer new features
