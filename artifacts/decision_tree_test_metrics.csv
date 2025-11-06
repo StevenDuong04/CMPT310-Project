@@ -1,0 +1,2 @@
+accuracy,precision_macro,recall_macro,f1_macro,balanced_accuracy,best_params
+0.38202247191011235,0.3422836867890007,0.3421867789995162,0.3308449870306581,0.3421867789995162,"{""clf__criterion"": ""gini"", ""clf__max_depth"": 14, ""clf__min_samples_leaf"": 2, ""clf__min_samples_split"": 10}"
