@@ -39,3 +39,9 @@ pip install -r requirements.txt
 ```bash
 deactivate
 ```
+
+## Running Streamlit App
+To run a streamlit application into a browser
+```bash
+streamlit run app_name.py
+```
