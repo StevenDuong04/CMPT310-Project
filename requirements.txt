@@ -8,3 +8,4 @@ streamlit
 jupyter
 notebook
 plotly
+lightgbm
