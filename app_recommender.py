@@ -2,7 +2,9 @@
 from __future__ import annotations
 
 from typing import List
+from typing import Any, Callable, ContextManager, Optional, cast
 
+import pandas as pd
 import streamlit as st
 
 
@@ -31,28 +33,34 @@ def render_sidebar() -> None:
         st.header("How it works")
         st.markdown(
             """
-            1. Upload a CSV or Excel file containing user profiles.
-            2. Click **Submit** to generate placeholder recommendations.
-            3. Review the mock Top 3 list, then reset to try another file.
+            1. **Click** *Upload your dataset* and select a CSV or Excel file containing your grades.  
+            2. **Press** *Submit* to see the (mock) Top 3 recommendations.  
+            3. **Use** *Run another file* to reset and try a different dataset.  
             """
         )
 
 
 def _safe_rerun() -> None:
-    """Call st.rerun or st.experimental_rerun if available."""
-    if hasattr(st, "rerun"):
-        st.rerun()
-    elif hasattr(st, "experimental_rerun"):
-        st.experimental_rerun()
+    """Call st.rerun or st.experimental_rerun if available (without static attribute access)."""
+    rerun = getattr(st, "rerun", None)
+    if callable(rerun):
+        rerun()
+        return
+    exp_rerun = getattr(st, "experimental_rerun", None)
+    if callable(exp_rerun):
+        exp_rerun()
 
 def render_onboarding_modal() -> None:
     """Show a blocking onboarding UI until the user acknowledges it."""
     if st.session_state.get("onboarding_seen", False):
         return
 
-    # Newer Streamlit supports st.modal
-    if hasattr(st, "modal"):
-        with st.modal("Welcome to Career Path Recommender", key="onboarding_modal"):
+    # Newer Streamlit supports st.modal; type-cast so Pylance sees a context manager
+    ModalType = Callable[..., ContextManager[Any]]
+    modal = cast(Optional[ModalType], getattr(st, "modal", None))
+    if modal is not None:
+        cm: ContextManager[Any] = modal("Welcome to Career Path Recommender", key="onboarding_modal")
+        with cm:
             st.markdown(
                 """
                 <style>
@@ -65,10 +73,11 @@ def render_onboarding_modal() -> None:
             st.markdown(
                 """
                 **How to use this app**
-                1. Click **Upload your dataset** and select a CSV or Excel file.
-                2. Press **Submit** to see the (mock) Top 3 recommendations.
-                3. Use **Run another file** to reset and try a different dataset.
-                
+
+                1. **Click** *Upload your dataset* and select a CSV or Excel file containing your grades.  
+                2. **Press** *Submit* to see the (mock) Top 3 recommendations.  
+                3. **Use** *Run another file* to reset and try a different dataset.  
+
                 _Note: Recommendations are placeholders until the ML pipeline is connected._
                 """
             )
@@ -82,13 +91,14 @@ def render_onboarding_modal() -> None:
     # Fallback for older Streamlit versions without st.modal: use a blocking form
     st.markdown("## Welcome to Career Path Recommender")
     with st.form(key="onboard_form"):
-        st.write("👋 **Hi!** Thanks for trying our app.")
+        st.write("**Hi!** Thanks for trying our app.")
         st.markdown(
             """
             **How to use this app**
-            1. Click **Upload your dataset** and select a CSV or Excel file.\
-            2. Press **Submit** to see the (mock) Top 3 recommendations.\
-            3. Use **Run another file** to reset and try a different dataset.
+
+            1. **Click** *Upload your dataset* and select a CSV or Excel file containing your grades.  
+            2. **Press** *Submit* to see the (mock) Top 3 recommendations.  
+            3. **Use** *Run another file* to reset and try a different dataset.  
 
             _Note: Recommendations are placeholders until the ML pipeline is connected._
             """
@@ -123,9 +133,90 @@ def render_upload_form() -> None:
         st.session_state.submitted = True
 
 
+DEFAULT_RECOMMENDATIONS: List[str] = [
+    "Software Engineer",
+    "Data Scientist",
+    "Product Manager",
+]
+
+CAREER_KEYWORDS = {
+    "Software Engineer": ("math", "calculus", "cs", "program", "logic", "computer"),
+    "Data Scientist": ("data", "stat", "analytics", "machine", "ml", "ai"),
+    "Product Manager": ("business", "manage", "communication", "english", "marketing"),
+    "Mechanical Engineer": ("physics", "mechanic", "engineering", "manufacturing"),
+    "Biotechnologist": ("bio", "life", "medical", "health"),
+    "Chemical Engineer": ("chem", "chemical", "materials"),
+    "Financial Analyst": ("finance", "econom", "account", "market"),
+    "UX Designer": ("design", "creative", "art", "visual"),
+}
+
+
 def get_top3_recommendations(_uploaded_file) -> List[str]:
-    # TODO: Implement the actual recommendation engine using the uploaded data.
-    return ["Software Engineer", "Data Scientist", "Product Manager"]
+    if _uploaded_file is None:
+        return DEFAULT_RECOMMENDATIONS.copy()
+
+    filename = getattr(_uploaded_file, "name", "").lower()
+    preferred_reader = pd.read_csv if filename.endswith(".csv") else pd.read_excel
+    dataframe = None
+    try:
+        dataframe = preferred_reader(_uploaded_file)
+    except Exception:
+        try:
+            _uploaded_file.seek(0)
+            fallback_reader = pd.read_excel if preferred_reader is pd.read_csv else pd.read_csv
+            dataframe = fallback_reader(_uploaded_file)
+        except Exception:
+            return DEFAULT_RECOMMENDATIONS.copy()
+    finally:
+        try:
+            _uploaded_file.seek(0)
+        except Exception:
+            pass
+
+    numeric_data = dataframe.select_dtypes(include="number")
+    if numeric_data.empty:
+        return DEFAULT_RECOMMENDATIONS.copy()
+
+    col_means = numeric_data.mean(axis=0, numeric_only=True)
+    if col_means.empty:
+        return DEFAULT_RECOMMENDATIONS.copy()
+
+    career_scores = {career: 0.0 for career in CAREER_KEYWORDS}
+    unmatched_strength = 0.0
+
+    for col_name, mean_value in col_means.items():
+        col_key = col_name.lower()
+        adjusted_value = float(mean_value)
+        if "absent" in col_key or "absence" in col_key:
+            adjusted_value = max(0.0, 100.0 - adjusted_value)
+        matched = False
+        for career, keywords in CAREER_KEYWORDS.items():
+            if any(keyword in col_key for keyword in keywords):
+                career_scores[career] += adjusted_value
+                matched = True
+        if not matched:
+            unmatched_strength += adjusted_value
+
+    if unmatched_strength > 0.0:
+        spread = (unmatched_strength * 0.1) / max(len(career_scores), 1)
+        for career in career_scores:
+            career_scores[career] += spread
+
+    ranked = sorted(
+        (item for item in career_scores.items() if item[1] > 0),
+        key=lambda kv: kv[1],
+        reverse=True,
+    )
+
+    recommendations = [career for career, _ in ranked[:3]]
+    if len(recommendations) < 3:
+        for career in DEFAULT_RECOMMENDATIONS:
+            if career not in recommendations:
+                recommendations.append(career)
+            if len(recommendations) == 3:
+                break
+
+    return recommendations
 
 
 def render_results() -> None:
