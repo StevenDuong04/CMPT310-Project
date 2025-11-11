@@ -1,0 +1,2 @@
+id,first_name,last_name,email,gender,part_time_job,absence_days,extracurricular_activities,weekly_self_study_hours,math_score,history_score,physics_score,chemistry_score,biology_score,english_score,geography_score
+1,Paul,Casey,paul.casey.1@gslingacademy.com,male,False,3,False,27,73,81,93,97,63,80,87

@@ -1,11 +1,20 @@
+# Authors: Steven Duong, Harry Lee, Anthony Trieu, Tony Wu
+# Project: CMPT 310 Final Project - Career Path Prediction
+# Date: Nov 10, 2025
+# Description: This file contains the code for the user interface using Streamlit.
+
+# To run the app, use the command:
 # streamlit run app_recommender.py
+
+# Import necessary libraries
 from __future__ import annotations
-
+from model import predict_career_path
 from typing import List
-
+import pandas as pd
 import streamlit as st
+import tempfile
 
-
+# Initialize Streamlit session state
 def init_state() -> None:
     """Initialize the Streamlit session state once per session."""
     defaults = {
@@ -19,13 +28,13 @@ def init_state() -> None:
         if key not in st.session_state:
             st.session_state[key] = value
 
-
+# Render the app header
 def render_header() -> None:
     st.set_page_config(page_title="Career Path Recommender", layout="wide")
     st.title("Career Path Recommender")
     st.caption("Upload a dataset to preview mock career path recommendations.")
 
-
+# Render the sidebar with instructions
 def render_sidebar() -> None:
     with st.sidebar:
         st.header("How it works")
@@ -37,7 +46,7 @@ def render_sidebar() -> None:
             """
         )
 
-
+# Safely rerun the app
 def _safe_rerun() -> None:
     """Call st.rerun or st.experimental_rerun if available."""
     if hasattr(st, "rerun"):
@@ -45,6 +54,7 @@ def _safe_rerun() -> None:
     elif hasattr(st, "experimental_rerun"):
         st.experimental_rerun()
 
+# Render the onboarding modal
 def render_onboarding_modal() -> None:
     """Show a blocking onboarding UI until the user acknowledges it."""
     if st.session_state.get("onboarding_seen", False):
@@ -100,7 +110,7 @@ def render_onboarding_modal() -> None:
     # Block the rest of the page until acknowledged
     st.stop()
 
-
+# Render the file upload form
 def render_upload_form() -> None:
     uploaded_file = st.file_uploader(
         "Upload your dataset",
@@ -122,12 +132,16 @@ def render_upload_form() -> None:
         )
         st.session_state.submitted = True
 
-
+# Get top 3 career path recommendations (mock implementation)
 def get_top3_recommendations(_uploaded_file) -> List[str]:
-    # TODO: Implement the actual recommendation engine using the uploaded data.
-    return ["Software Engineer", "Data Scientist", "Product Manager"]
+    with tempfile.NamedTemporaryFile(delete=False, suffix=".csv") as tmp:
+        tmp.write(_uploaded_file.getvalue())
+        tmp_path = tmp.name
+        
+    top3 = predict_career_path(tmp_path)
+    return top3
 
-
+# Render the results section
 def render_results() -> None:
     if not st.session_state.submitted:
         return
@@ -137,9 +151,9 @@ def render_results() -> None:
     if not st.session_state.recommendations:
         st.info("No recommendations available yet.")
     else:
-        for rec in st.session_state.recommendations:
-            st.markdown(f"- {rec}")
-
+        for career, prob in st.session_state.recommendations:
+            st.write(f"**{career}** - {prob*100:.1f}%")
+            st.progress(prob)
     if st.button("Run another file"):
         st.session_state.uploaded_file = None
         st.session_state.submitted = False
