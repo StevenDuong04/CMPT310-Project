@@ -32,7 +32,7 @@ def init_state() -> None:
 def render_header() -> None:
     st.set_page_config(page_title="Career Path Recommender", layout="wide")
     st.title("Career Path Recommender")
-    st.caption("Upload a dataset to preview mock career path recommendations.")
+    st.caption("Upload a transcript dataset to view career path recommendations.")
 
 # Render the sidebar with instructions
 def render_sidebar() -> None:
@@ -75,11 +75,9 @@ def render_onboarding_modal() -> None:
             st.markdown(
                 """
                 **How to use this app**
-                1. Click **Upload your dataset** and select a CSV or Excel file.
-                2. Press **Submit** to see the (mock) Top 3 recommendations.
-                3. Use **Run another file** to reset and try a different dataset.
-                
-                _Note: Recommendations are placeholders until the ML pipeline is connected._
+                1. Click "Upload your dataset" and select a CSV or Excel file.
+                2. Press "Submit" to see the Top 3 recommendations.
+                3. Use "Run another file" to reset and try a different dataset.
                 """
             )
             if st.button("I understand — let's start", key="onboard_ack_modal", use_container_width=True):
@@ -96,11 +94,9 @@ def render_onboarding_modal() -> None:
         st.markdown(
             """
             **How to use this app**
-            1. Click **Upload your dataset** and select a CSV or Excel file.\
-            2. Press **Submit** to see the (mock) Top 3 recommendations.\
-            3. Use **Run another file** to reset and try a different dataset.
-
-            _Note: Recommendations are placeholders until the ML pipeline is connected._
+            1. Click "Upload your dataset" and select a CSV or Excel file.
+            2. Press "Submit" to see the Top 3 recommendations.
+            3. Use "Run another file" to reset and try a different dataset.
             """
         )
         acknowledged = st.form_submit_button("I understand — let's start")
