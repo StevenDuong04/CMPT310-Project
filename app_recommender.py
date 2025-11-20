@@ -110,6 +110,89 @@ def render_onboarding_modal() -> None:
     # Block the rest of the page until acknowledged
     st.stop()
 
+# Render alert for parse errors
+def render_parse_error_alert() -> None:
+    st.markdown(
+        """
+        <style>
+        .notifications-container {
+          width: 100%;
+          max-width: 480px;
+          font-size: 0.875rem;
+          line-height: 1.25rem;
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
+          margin-top: 12px;
+        }
+
+        .flex {
+          display: flex;
+        }
+
+        .flex-shrink-0 {
+          flex-shrink: 0;
+        }
+
+        .alert {
+          background-color: rgb(254, 252, 232);
+          border-left-width: 4px;
+          border-color: rgb(250, 204, 21);
+          border-radius: 0.375rem;
+          padding: 1rem;
+          border-style: solid;
+        }
+
+        .alert-svg {
+          height: 1.25rem;
+          width: 1.25rem;
+          color: rgb(250, 204, 21);
+        }
+
+        .alert-prompt-wrap {
+          margin-left: 0.75rem;
+          color: rgb(202, 138, 4);
+        }
+
+        .alert-prompt-link {
+          font-weight: 500;
+          color: rgb(141, 56, 0);
+          text-decoration: underline;
+          cursor: pointer;
+        }
+
+        .alert-prompt-link:hover {
+          color: rgb(202, 138, 4);
+        }
+        </style>
+
+        <div class="notifications-container">
+          <div class="alert">
+            <div class="flex">
+              <div class="flex-shrink-0">
+                <svg aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
+                     xmlns="http://www.w3.org/2000/svg" class="alert-svg">
+                  <path clip-rule="evenodd"
+                        d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0
+                             1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z"
+                        fill-rule="evenodd"></path>
+                </svg>
+              </div>
+              <div class="alert-prompt-wrap">
+                <p class="text-sm">
+                  Sorry, but we couldn't read your file. Please remove the uploaded file and try again with a
+                  <a class="alert-prompt-link" href="https://support.collegekickstart.com/hc/en-us/articles/11386233650445-How-do-I-export-a-file-as-a-CSV-in-UTF-8#:~:text=In%20order%20to%20read%20special,that%20can%20support%20many%20languages." target="_blank" rel="noopener noreferrer">
+                    UTF-8 encoded CSV file
+                  </a>.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
+
 # Render the file upload form
 def render_upload_form() -> None:
     uploaded_file = st.file_uploader(
@@ -137,8 +220,18 @@ def get_top3_recommendations(_uploaded_file) -> List[str]:
     with tempfile.NamedTemporaryFile(delete=False, suffix=".csv") as tmp:
         tmp.write(_uploaded_file.getvalue())
         tmp_path = tmp.name
-        
-    top3 = predict_career_path(tmp_path)
+
+    try:
+        top3 = predict_career_path(tmp_path)
+    except ValueError as exc:
+        if str(exc) == "PARSE_ERROR":
+            st.session_state.uploaded_file = None
+            st.session_state.submitted = False
+            st.session_state.recommendations = []
+            st.session_state.uploader_nonce += 1
+            render_parse_error_alert()
+            return []
+        raise
     return top3
 
 # Render the results section

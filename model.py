@@ -23,7 +23,10 @@ label_encoder_gender = joblib.load('saved_model/label_encoder_gender.pkl')
 
 # Preprocess input data
 def preprocess_input(uploaded_file: str) -> pd.DataFrame:
-    student = pd.read_csv(uploaded_file)
+    try:
+        student = pd.read_csv(uploaded_file)
+    except Exception as exc:
+        raise ValueError("PARSE_ERROR") from exc
     student = student.iloc[:, 4:]
 
     # Feature engineering
