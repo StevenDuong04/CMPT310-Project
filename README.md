@@ -334,11 +334,6 @@ This project is created for educational purposes as part of CMPT 310 coursework.
 
 - **Course**: CMPT 310 - Introduction to Artificial Intelligence
 - **Institution**: Simon Fraser University
-- **Dataset**: Custom student performance dataset
+- **Dataset**: https://www.kaggle.com/datasets/markmedhat/student-scores
 - **Libraries**: Streamlit, LightGBM, scikit-learn, and all open-source contributors
 
----
-
-## Contact
-
-For questions or issues related to this project, please refer to the course materials or contact the development team through the university email system.
