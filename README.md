@@ -46,6 +46,7 @@ deactivate
 ```bash
 streamlit run app_name.py
 ```
+2. Once the application is open, follow the instructions on the website
 
-1. To exit the application when done
+3. To exit the application when done
 Use keys on your keyboard: ctrl + c
