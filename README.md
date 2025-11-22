@@ -324,12 +324,6 @@ This is an academic project for CMPT 310 at Simon Fraser University.
 
 ---
 
-## License
-
-This project is created for educational purposes as part of CMPT 310 coursework.
-
----
-
 ## Acknowledgments
 
 - **Course**: CMPT 310 - Introduction to Artificial Intelligence
