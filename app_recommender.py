@@ -30,8 +30,8 @@ def init_state() -> None:
 
 # Render the app header
 def render_header() -> None:
-    st.set_page_config(page_title="Career Path Recommender", layout="wide")
-    st.title("Career Path Recommender")
+    st.set_page_config(page_title="FindMyPath", layout="wide")
+    st.title("FindMyPath: Career Path Recommender")
     st.caption("Upload a transcript dataset to view career path recommendations.")
 
 # Render the sidebar with instructions
@@ -62,7 +62,7 @@ def render_onboarding_modal() -> None:
 
     # Newer Streamlit supports st.modal
     if hasattr(st, "modal"):
-        with st.modal("Welcome to Career Path Recommender", key="onboarding_modal"):
+        with st.modal("Welcome to FindMyPath", key="onboarding_modal"):
             st.markdown(
                 """
                 <style>
@@ -88,7 +88,7 @@ def render_onboarding_modal() -> None:
         return
 
     # Fallback for older Streamlit versions without st.modal: use a blocking form
-    st.markdown("## Welcome to Career Path Recommender")
+    st.markdown("## Welcome to FindMyPath")
     with st.form(key="onboard_form"):
         st.write("👋 **Hi!** Thanks for trying our app.")
         st.markdown(
