@@ -1,0 +1,2 @@
+id,first_name,last_name,email,gender,part_time_job,absence_days,extracurricular_activities,weekly_self_study_hours,math_score,history_score,physics_score,chemistry_score,biology_score,english_score,geography_score
+1,Steven,Duong,steven.duong@example.com,male,True,0,False,20,92,90,96,93,75,88,92
